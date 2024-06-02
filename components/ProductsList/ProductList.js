@@ -74,6 +74,7 @@ const ProductList = ({ subCat }) => {
 					justifyContent: "flex-start",
 					alignItems: "flex-start",
 					gap: 5,
+                    paddingBottom: 40
 				}}
 			/>
 		</View>

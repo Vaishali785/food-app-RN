@@ -32,13 +32,16 @@ const ProductItem = (props) => {
 		<View
 			style={{
 				gap: 40,
-				overflow: "hidden",
+				// overflow: "hidden",
 				alignItems: "center",
-				marginHorizontal: "auto",
+				// marginHorizontal: "auto",
 				justifyContent: "flex-start",
                 width:"49%",
+                minWidth: 135,
                 paddingHorizontal:10,
                 paddingVertical:10,
+                // borderColor:"red",
+                // borderWidth:1
 			}}
 		>
 			<View style={{ width: "100%" }}>
