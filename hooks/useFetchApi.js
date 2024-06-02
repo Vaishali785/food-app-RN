@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 const useFetchApi = () => {
 	const [isLoading, setIsLoading] = useState()
@@ -12,8 +12,7 @@ const useFetchApi = () => {
 			.catch((err) => setError(err))
 		setIsLoading(false)
 	}
-	// useEffect(() => {
-	// }, [])
+
 	return { data, isLoading, error, getData }
 }
 

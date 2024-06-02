@@ -7,7 +7,7 @@ const CategoryPage = () => {
 	const { parentId, catName, currentPage, currentPageId } =
 		useLocalSearchParams()
 	return (
-		<View>
+		<View style={{width:"100%"}}>
 			<ProductList subCat={currentPageId} />
 		</View>
 	)

@@ -21,9 +21,10 @@ const CatLayout = () => {
 				<ScrollView
 					contentContainerStyle={{
 						alignItems: "flex-start",
-						paddingVertical: 20,
+						paddingTop: 10,
 						borderRightColor: GlobalColors.borderColor,
 						borderRightWidth: 1,
+                        paddingBottom: 80,
 					}}
 					showsVerticalScrollIndicator={false}
 				>
@@ -36,7 +37,7 @@ const CatLayout = () => {
 						/>
 					))}
 				</ScrollView>
-				<View style={{ width: "70%" }}>
+				<View style={{ width: "80%" }}>
 					<Slot />
 				</View>
 			</View>

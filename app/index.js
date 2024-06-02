@@ -29,25 +29,23 @@ const index = () => {
 	return (
 		<View
 			style={{
-				backgroundColor: "white",
-				flex: 1,
+				backgroundColor: "white",                
 			}}
 		>
 			<Header />
-			<ScrollView
-				contentContainerStyle={{
-					width: "100%",
+			<ScrollView>
+                <View style={{
 					flexDirection: "row",
 					flexWrap: "wrap",
-					gap: 10,
+					gap: 13,
 					paddingTop: 15,
-					paddingHorizontal: 10,
-					paddingBottom: 20,
-				}}
-			>
-				{data?.map((item) => (
-					<Item key={item.id} item={item} />
-				))}
+					paddingHorizontal: 12,
+					paddingBottom: 120,
+                }}>
+                    {data?.map((item) => (
+                        <Item key={item.id} item={item} />
+                    ))}
+                </View>
 			</ScrollView>
 		</View>
 	)

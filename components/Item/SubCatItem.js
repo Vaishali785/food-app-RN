@@ -31,7 +31,6 @@ const SubCatItem = ({ item, parentName, parentId }) => {
 						path == linkedUrl && {
 							color: GlobalColors.itemText,
 						},
-						// : { color: GlobalColors.nonSelectedText },
 					]}
 				>
 					{item.name}
@@ -57,19 +56,20 @@ const styles = StyleSheet.create({
 	subCatName: {
 		textAlign: "center",
 		width: "100%",
+        fontSize:10,
 		color: GlobalColors.nonSelectedText,
 		fontFamily: "Inter_500Medium",
 	},
 	selectedBorder: {
 		backgroundColor: GlobalColors.selectedItem,
-		width: 1,
+		width: 3,
 		borderRadius: 0,
 		borderTopLeftRadius: 10,
 		borderBottomLeftRadius: 10,
 		position: "absolute",
 		right: 0,
 		top: 0,
-		height: "100%",
+		height: "120%",
 	},
 })
 

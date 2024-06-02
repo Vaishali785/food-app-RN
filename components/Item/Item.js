@@ -1,6 +1,7 @@
 import { Text, Image, TouchableOpacity, StyleSheet } from "react-native"
 import React from "react"
 import { router } from "expo-router"
+import GlobalColors from "../../assets/styles/GlobalColors"
 
 const Item = ({ item }) => {
 	return (
@@ -29,14 +30,13 @@ const Item = ({ item }) => {
 const styles = StyleSheet.create({
 	item: {
 		width: 80,
-		height: 101,
+		height: 100,
 		gap: 5,
-		overflow: "hidden",
 		alignItems: "center",
-		marginHorizontal: "auto",
 		justifyContent: "flex-start",
 	},
 	itemName: {
+        color: GlobalColors.itemText,
 		textAlign: "center",
 	},
 })
