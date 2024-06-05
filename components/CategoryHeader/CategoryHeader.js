@@ -27,8 +27,9 @@ const CategoryHeader = (props) => {
 					/>
 				)}
 				<Image
-					style={{ width: 40, height: 40 }}
-					source={require("../../assets/placeholder.png")}
+					resizeMode="contain"
+					style={{ width: 40, height: 40, borderRadius: 100 }}
+					source={{ uri: `${props.currentImg}` }}
 				/>
 				<Text
 					style={{

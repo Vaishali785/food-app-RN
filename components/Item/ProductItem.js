@@ -2,6 +2,7 @@ import { View, Text, Image, StyleSheet } from "react-native"
 import React, { useState } from "react"
 import GlobalColors from "../../assets/styles/GlobalColors"
 import AddItemBtn from "../AddItemBtn/AddItemBtn"
+import { baseUrl } from "../../store/apis"
 
 const ProductItem = (props) => {
 	const [checkSelected, setCheckSelected] = useState()
@@ -36,16 +37,28 @@ const ProductItem = (props) => {
 				alignItems: "center",
 				// marginHorizontal: "auto",
 				justifyContent: "flex-start",
-                width:"49%",
-                minWidth: 135,
-                paddingHorizontal:10,
-                paddingVertical:10,
-                // borderColor:"red",
-                // borderWidth:1
+				width: "49%",
+				minWidth: 135,
+				paddingHorizontal: 10,
+				paddingVertical: 10,
+				// borderColor:"red",
+				// borderWidth:1
 			}}
 		>
 			<View style={{ width: "100%" }}>
-				<Image source={require("../../assets/product.png")} />
+				<Image
+					source={{ uri: `${baseUrl + props.productImg}` }}
+					// source={require("../../assets/product.png")}
+					style={{
+						width: 110,
+						height: 110,
+						// borderWidth: 1,
+						// borderColor: "red",
+						borderRadius: 10,
+						overflow: "hidden",
+					}}
+					resizeMode="contain"
+				/>
 				<AddItemBtn
 					itemSelected={checkSelected}
 					itemSelect={handleSelected}
@@ -81,20 +94,20 @@ const styles = StyleSheet.create({
 		fontFamily: "Inter_600SemiBold",
 		fontSize: 13,
 		width: "100%",
-        lineHeight:16 ,
-        minHeight: 32
+		lineHeight: 16,
+		minHeight: 32,
 	},
-    productWeight:{
-        minHeight: 32,
-        fontFamily: "Inter_500Medium",
-        color: GlobalColors.textColor,
-        width: "100%",
-        fontSize: 12
-    },
+	productWeight: {
+		minHeight: 32,
+		fontFamily: "Inter_500Medium",
+		color: GlobalColors.textColor,
+		width: "100%",
+		fontSize: 12,
+	},
 	productPrice: {
-        color: GlobalColors.itemText,
-        fontFamily: "Inter_700Bold",
-        fontSize: 13,
+		color: GlobalColors.itemText,
+		fontFamily: "Inter_700Bold",
+		fontSize: 13,
 	},
 })
 

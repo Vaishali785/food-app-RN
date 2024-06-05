@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native"
 import React from "react"
 import { router, usePathname } from "expo-router"
 import GlobalColors from "../../assets/styles/GlobalColors"
+import { baseUrl } from "../../store/apis"
 
 const SubCatItem = ({ item, parentName, parentId }) => {
 	const pathUrl = usePathname()
@@ -23,7 +24,12 @@ const SubCatItem = ({ item, parentName, parentId }) => {
 					})
 				}
 			>
-				<Image source={require("../../assets/placeholder.png")} />
+				<Image
+					source={{ uri: baseUrl + item.image.path }}
+					style={{ width: 60, height: 60 }}
+					resizeMode="contain"
+				/>
+				{/* <Image source={require("../../assets/placeholder.png")} /> */}
 				<Text
 					numberOfLines={2}
 					style={[
@@ -56,7 +62,7 @@ const styles = StyleSheet.create({
 	subCatName: {
 		textAlign: "center",
 		width: "100%",
-        fontSize:10,
+		fontSize: 10,
 		color: GlobalColors.nonSelectedText,
 		fontFamily: "Inter_500Medium",
 	},

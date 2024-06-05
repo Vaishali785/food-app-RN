@@ -2,6 +2,7 @@ import { Text, Image, TouchableOpacity, StyleSheet } from "react-native"
 import React from "react"
 import { router } from "expo-router"
 import GlobalColors from "../../assets/styles/GlobalColors"
+import { baseUrl } from "../../store/apis"
 
 const Item = ({ item }) => {
 	return (
@@ -15,14 +16,31 @@ const Item = ({ item }) => {
 						currentPage: `${item?.availableSubcategories[0].name}`,
 						currentPageId: item?.availableSubcategories[0].id,
 						catName: `${item.name}`,
+						currentImg: `${
+							baseUrl + (item.imageWithName.path ?? item.imageWithNameV2.path)
+						}`,
 					},
 				})
 			}
 		>
-			<Image source={require("../../assets/placeholder.png")} />
-			<Text numberOfLines={2} style={styles.itemName}>
+			{/* <Image source={require("../../assets/placeholder.png")} /> */}
+			<Image
+				resizeMode="contain"
+				style={{
+					width: 80,
+					height: 80,
+					borderRadius: 10,
+					padding: 10,
+				}}
+				source={{
+					uri: `${
+						baseUrl + (item.imageWithName.path ?? item.imageWithNameV2.path)
+					}`,
+				}}
+			/>
+			{/* <Text numberOfLines={2} style={styles.itemName}>
 				{item.name}
-			</Text>
+			</Text> */}
 		</TouchableOpacity>
 	)
 }
@@ -36,7 +54,7 @@ const styles = StyleSheet.create({
 		justifyContent: "flex-start",
 	},
 	itemName: {
-        color: GlobalColors.itemText,
+		color: GlobalColors.itemText,
 		textAlign: "center",
 	},
 })

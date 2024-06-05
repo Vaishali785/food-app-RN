@@ -12,11 +12,11 @@ const CatLayout = () => {
 	useEffect(() => {
 		getData(getAllSubCategories(parentId))
 	}, [])
-	const { parentId, catName, currentPage, currentPageId } =
+	const { parentId, catName, currentPage, currentPageId, currentImg } =
 		useLocalSearchParams()
 	return (
 		<>
-			<CategoryHeader catName={catName} />
+			<CategoryHeader catName={catName} currentImg={currentImg} />
 			<View style={{ backgroundColor: "white", flexDirection: "row" }}>
 				<ScrollView
 					contentContainerStyle={{
@@ -24,7 +24,7 @@ const CatLayout = () => {
 						paddingTop: 10,
 						borderRightColor: GlobalColors.borderColor,
 						borderRightWidth: 1,
-                        paddingBottom: 80,
+						paddingBottom: 80,
 					}}
 					showsVerticalScrollIndicator={false}
 				>
